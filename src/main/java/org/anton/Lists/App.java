@@ -30,4 +30,13 @@ public class App {
         }
         return result;
     }
+
+    // Use interface List to work with all impl of List
+    public static int countBooks(List<Book> books, String name, String genre) {
+        int result = 0;
+        for (Book book : books) {
+            if (book.getAuthorName().equals(name) && book.getGenre().equals(genre)) result++;
+        }
+        return result;
+    }
 }
