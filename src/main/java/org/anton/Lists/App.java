@@ -1,5 +1,6 @@
 package org.anton.Lists;
 
+import org.apache.commons.collections4.CollectionUtils;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,5 +39,10 @@ public class App {
             if (book.getAuthorName().equals(name) && book.getGenre().equals(genre)) result++;
         }
         return result;
+    }
+
+    // Use common-collection4 to find intersection
+    public static List<User> getCommonFriends(User user1, User user2) {
+        return (List<User>) CollectionUtils.intersection(user1.getFriends(), user2.getFriends());
     }
 }
