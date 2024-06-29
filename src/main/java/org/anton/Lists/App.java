@@ -12,11 +12,22 @@ public class App {
 
     // Seek items by for-each
     public static List<Integer> replaceByZero(List<Integer> numbers) {
-        List<Integer> noNegativenumbersList = new ArrayList<Integer>();
+        List<Integer> noNegativeNumbersList = new ArrayList<Integer>();
         for (Integer num : numbers) {
-            if (num < 0) noNegativenumbersList.add(0);
-            else noNegativenumbersList.add(num);
+            if (num < 0) noNegativeNumbersList.add(0);
+            else noNegativeNumbersList.add(num);
         }
-        return noNegativenumbersList;
+        return noNegativeNumbersList;
+    }
+
+    // Find product title where price in range minPace - maxPrice
+    public static List<String> getProductsByPrice(List<Product> products, int minPrice, int maxPrice) {
+        List<String> result = new ArrayList<String>();
+        for (Product product : products) {
+            if (product.getPrice() >= minPrice && product.getPrice() <= maxPrice) {
+                result.add(product.getTitle());
+            }
+        }
+        return result;
     }
 }
