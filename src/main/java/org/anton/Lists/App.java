@@ -1,6 +1,7 @@
 package org.anton.Lists;
 
 import org.apache.commons.collections4.CollectionUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,5 +45,14 @@ public class App {
     // Use common-collection4 to find intersection
     public static List<User> getCommonFriends(User user1, User user2) {
         return (List<User>) CollectionUtils.intersection(user1.getFriends(), user2.getFriends());
+    }
+
+    public static List<String> getCars(List<Car> cars, int date) {
+        List<String> result = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getManufacturedAt().getYear() < date) result.add(car.toString());
+        }
+        result.sort(String::compareToIgnoreCase);
+        return result;
     }
 }
