@@ -4,6 +4,7 @@ import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class App {
 
@@ -47,6 +48,7 @@ public class App {
         return (List<User>) CollectionUtils.intersection(user1.getFriends(), user2.getFriends());
     }
 
+    // Find cars before date of manufactured
     public static List<String> getCars(List<Car> cars, int date) {
         List<String> result = new ArrayList<>();
         for (Car car : cars) {
@@ -54,5 +56,18 @@ public class App {
         }
         result.sort(String::compareToIgnoreCase);
         return result;
+    }
+
+    // Check Brackets Balance
+    public static boolean isBracketsBalanced(String input) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == '(') stack.add('(');
+            else if (input.charAt(i) == ')') {
+                if (stack.isEmpty()) return false;
+                else stack.pop();
+            }
+        }
+        return stack.isEmpty();
     }
 }
