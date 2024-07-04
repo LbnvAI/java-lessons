@@ -1,4 +1,4 @@
-package org.anton.Classes;
+package org.anton.classes;
 
 import lombok.Getter;
 

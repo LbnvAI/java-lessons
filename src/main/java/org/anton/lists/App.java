@@ -1,4 +1,4 @@
-package org.anton.Lists;
+package org.anton.lists;
 
 import org.apache.commons.collections4.CollectionUtils;
 

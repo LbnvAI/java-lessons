@@ -1,4 +1,4 @@
-package org.anton.Lists;
+package org.anton.lists;
 
 import lombok.Getter;
 
