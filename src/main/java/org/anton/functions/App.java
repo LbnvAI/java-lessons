@@ -1,9 +1,6 @@
 package org.anton.functions;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class App {
 
@@ -67,5 +64,12 @@ public class App {
 
     public static int calculate(int a, int b, BinaryOperation operation) {
         return operation.operation(a, b);
+    }
+
+    // Use method references to sort List
+    public static List<Book> sortBooks(List<Book> books) {
+        List<Book> sortedBooks = new ArrayList<>(books);
+        sortedBooks.sort(Comparator.comparing(Book::getTitle).reversed());
+        return sortedBooks;
     }
 }
