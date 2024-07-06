@@ -60,4 +60,12 @@ public class App {
         });
         return map;
     }
+
+    // Create method, using lambda as a parameter
+    BinaryOperation add = (a, b) -> a + b;
+    BinaryOperation sub = (a, b) -> a - b;
+
+    public static int calculate(int a, int b, BinaryOperation operation) {
+        return operation.operation(a, b);
+    }
 }
