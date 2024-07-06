@@ -1,6 +1,7 @@
 package org.anton.functions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -44,5 +45,19 @@ public class App {
             }
             return oldest;
         }
+    }
+
+    // Count numbers by sign
+    public static Map<String, Integer> countNumbers(List<Integer> numbers) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("positive", 0);
+        map.put("negative", 0);
+        map.put("zero", 0);
+        numbers.forEach(n -> {
+            if (n == 0) map.put("zero", map.get("zero") + 1);
+            if (n > 0) map.put("positive", map.get("positive") + 1);
+            if (n < 0) map.put("negative", map.get("negative") + 1);
+        });
+        return map;
     }
 }
