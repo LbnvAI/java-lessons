@@ -1,6 +1,7 @@
 package org.anton.functions;
 
 import java.util.*;
+import java.util.function.Function;
 
 public class App {
 
@@ -71,5 +72,14 @@ public class App {
         List<Book> sortedBooks = new ArrayList<>(books);
         sortedBooks.sort(Comparator.comparing(Book::getTitle).reversed());
         return sortedBooks;
+    }
+
+    // Apply lambda to all elements in list
+    public static List<String> map(List<String> strings, Function<String, String> fn) {
+        List<String> result = new ArrayList<>();
+        for (String str : strings) {
+            result.add(fn.apply(str));
+        }
+        return result;
     }
 }
