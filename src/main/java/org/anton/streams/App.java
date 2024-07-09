@@ -19,5 +19,18 @@ public class App {
         return humans.stream().filter(human -> human.getAge() >= 18).map(Person::getName).toList();
     }
 
+    // Use reduce()
+    public static Double getAverageAge(List<Person> persons) {
+        Double averageAge = 0.0;
+        if (persons.isEmpty()) return null;
+        else averageAge = persons.stream().reduce(0.0, (acc, person) -> acc += person.getAge(), Double::sum);
+        return averageAge / persons.size();
+    }
 
+    // Use filter and reduce
+    public static int getTotalPrice(List<Product> goods) {
+        return goods.stream()
+                .filter((good) -> good.getCategory().equals("electronics"))
+                .reduce(0, (acc, good) -> acc + good.getPrice(), Integer::sum);
+    }
 }
