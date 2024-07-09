@@ -12,6 +12,15 @@ public class SimpleTriple<L,M,R> implements Triple<L,M,R> {
         this.right = right;
     }
 
+    // Create generic method
+    public SimpleTriple<R,M,L> reverse(){
+        return new SimpleTriple<R,M,L>(right,middle,left);
+    }
+
+    public boolean isEqualTo(SimpleTriple<L,M,R> test) {
+        return left.equals(test.left) && right.equals(test.right) && middle.equals(test.middle);
+    }
+
     @Override
     public L getLeft() {
         return left;
