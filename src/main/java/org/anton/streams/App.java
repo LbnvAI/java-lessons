@@ -53,14 +53,16 @@ public class App {
                 }, Collectors.counting()));
     }
 
-//    public static Map<String, Long> getGenres(List<Film> films){
-//        // Создаем стрим
-//        return films.stream()
-//                // Делаем отображение, где все элементы внутри списка жанров в нижнем регистре
-//                .map(film -> film.getGenres().stream().map(String::toLowerCase))
-//                // Создание Map....               Подсчет элементов
-//                .collect(Collectors.groupingBy(),Collectors.counting());
-//    }
+    // Count films in genre
+    public static Map<String, Long> getGenres(List<Film> films){
+        var stream1 = films.stream();
+        System.out.println(stream1);
+        var stream2 = stream1.flatMap(film -> film.getGenres().stream().map(String::toLowerCase));
+        System.out.println(stream2);
+        var stream3 = stream2.collect(Collectors.groupingBy(Object::toString,Collectors.counting()));
+        System.out.println(stream3);
+        return stream3;
+    }
 
     // Use Optional type
     public static User findUserById(List<User> users, long id) {
