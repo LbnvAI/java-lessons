@@ -1,9 +1,6 @@
 package org.anton.streams;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collector;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class App {
@@ -54,5 +51,27 @@ public class App {
                 .collect(Collectors.groupingBy(mail -> {
                     return mail.split("@")[1];
                 }, Collectors.counting()));
+    }
+
+//    public static Map<String, Long> getGenres(List<Film> films){
+//        // Создаем стрим
+//        return films.stream()
+//                // Делаем отображение, где все элементы внутри списка жанров в нижнем регистре
+//                .map(film -> film.getGenres().stream().map(String::toLowerCase))
+//                // Создание Map....               Подсчет элементов
+//                .collect(Collectors.groupingBy(),Collectors.counting());
+//    }
+
+    // Use Optional type
+    public static User findUserById(List<User> users, long id) {
+        var result = users.stream().filter(user -> user.getId() == id).findFirst();
+        if (result.isPresent()) return result.get();
+        else throw new RuntimeException("User not found");
+    }
+
+    // Find second biggest
+    public static Number getSecondBiggest(List<Integer> numbers) {
+        if (numbers.size() <= 1) return null;
+        else return numbers.stream().sorted(Comparator.reverseOrder()).toList().get(1);
     }
 }
