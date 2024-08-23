@@ -1,5 +1,5 @@
 # file: .github/workflows/show-directory.yml
-name: show-directory
+name: say-hello
 # on – определяет события, которые запускают воркфлоу
 on: push
 jobs:
