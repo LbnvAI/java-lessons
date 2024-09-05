@@ -1,4 +1,4 @@
-package org.anton.oop.uml;
+package org.anton.oop.uml.one_to_many;
 
 import lombok.Getter;
 import lombok.Setter;

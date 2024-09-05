@@ -1,0 +1,46 @@
+  +-------------------+
+  |     Customer      |
+  +-------------------+
+  | - name: String    |
+  | - rides: List     |
+  +-------------------+
+  | + addRide()       |
+  | + getName()       |
+  | + setName()       |
+  | + getRides()      |
+  +-------------------+
+          ^ 1
+          |
+          | *
+  +-------------------------+
+  |      CarRide            |
+  +-------------------------+
+  | - customer: Customer    |
+  | - car: Car              |
+  | - startedAt: LocalDate  |
+  | - finishedAt: LocalDate |
+  +-------------------------+
+  | + getCustomer()         |
+  | + setCustomer  ()       |
+  | + getCar()              |
+  | + setCar()              |
+  | + getStartedAt()        |
+  | + setStartedAt()        |
+  | + getFinishedAt()       |
+  | + setFinishedAt()       |
+  +-------------------------+
+          | *
+          |
+          v 1
+  +-------------------+
+  |       Car         |
+  +-------------------+
+  | - model: String   |
+  | - vin: String     |
+  | - rides: List     |
+  +-------------------+
+  | + addRide()       |
+  | + getModel()      |
+  | + getVin()        |
+  | + getRides()      |
+  +-------------------+

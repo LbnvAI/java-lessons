@@ -1,4 +1,4 @@
-package org.anton.oop.builder_pattern;
+package org.anton.oop.pattern_builder;
 
 public class App {
     public static Pizza getPizza(){
