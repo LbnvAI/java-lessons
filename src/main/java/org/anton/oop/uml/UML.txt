@@ -1,0 +1,30 @@
+  +---------------------+
+  |    Department       |
+  +---------------------+
+  | - title: String     |
+  | - employees: List   |
+  +---------------------+
+  | + addEmployee()     |
+  | + removeEmployee()  |
+  | + getTitle()        |
+  | + setTitle()        |
+  | + getEmployees()    |
+  +---------------------+
+            | 1
+            |
+            |
+            v 0..*
+  +--------------------------+
+  |        Employee          |
+  +--------------------------+
+  | - fullName: String       |
+  | - position: String       |
+  | - department: Department |
+  +--------------------------+
+  | + getFullName()          |
+  | + setFullName()          |
+  | + getPosition()          |
+  | + setPosition()          |
+  | + getDepartment()        |
+  | + setDepartment()        |
+  +--------------------------+
