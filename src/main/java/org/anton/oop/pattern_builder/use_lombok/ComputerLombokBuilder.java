@@ -1,11 +1,15 @@
-package org.anton.oop.pattern_builder;
+package org.anton.oop.pattern_builder.use_lombok;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.Setter;
 
 @AllArgsConstructor
 @Setter
-public class Computer {
+@Getter
+@Builder
+public class ComputerLombokBuilder {
     private int ram;
     private double cpu;
     private int ssd;
